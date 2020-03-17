@@ -1,3 +1,8 @@
+:root {
+    --primary-color: dodgerblue;
+    --font-color: white; 
+}
+
 body {
     margin: 0;
     background-color: #e3e3e3;
@@ -5,6 +10,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.fas {
+    color: var(--font-color); 
+    font-size: 35px;
 }
 
 .player {
@@ -22,13 +32,38 @@ video {
 .controls-container {
     position: absolute;
     width: 100%;
-    height: 66px; 
-    margin-top: -62px;
+    height: 100px; 
+    margin-top: -95px;
     background-color: rgba(0, 0, 0, .5);
     box-sizing: border-box;
     z-index: 5;
     display: flex;
     justify-content: space-between;
+}
+
+.progress-range {
+    height: 8px;
+    width: calc(100% - 30px);
+    background: rgba(0, 0, 0, .5);
+    margin: auto;
+    border-radius: 10px;
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    cursor: pointer;
+    transition: height 0.1s ease-in-out;
+}
+
+.progress-range:hover {
+    height: 10px;
+}
+
+.progress-bar {
+    background: var(--primary-color);
+    width: 50%;
+    height: 100%;
+    border-radius: 10px;
+    transition: all 0.1s;
 }
 
 .main-controls {
@@ -41,8 +76,9 @@ video {
 .controls-left, .controls-right {
     flex: 1;
     display: flex;
-    align-items: center;
     overflow: hidden;
+    position: relative;
+    top: 40px;
 }
 
 .controls-left {
@@ -59,18 +95,19 @@ video {
     margin-right: 15px;
 }
 
+.speed, .time {
+    position: relative;
+    top: 10px;
+}
+
 .speed {
     margin-right: 15px;
 }
 
 .time {
     margin-right: 15px; 
-    color: white;
+    color: var(--font-color);
     font-weight: bold;
     font-family: Helvetica, sans-serif;
 }
 
-.fas {
-    color: white; 
-    font-size: 35px;
-}
