@@ -1,0 +1,75 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Video Player</title>
+    <link rel="icon" type="image/png" href="https://s2.googleusercontent.com/s2/favicons?domain=www.jacinto.design">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="player">
+        <!-- https://pixabay.com/videos/download/video-31420_large.mp4?attachment -->
+        <video id='video' src='https://pixabay.com/videos/download/video-31377_tiny.mp4?attachment' autoplay loop muted playsinline></video>
+        <div class="controls-container">
+            <!-- Progress Bar -->
+            <div class="progress-range">
+                <div class="progress-bar"></div>
+            </div>
+            <div class="main-controls">
+                <!-- Left Controls -->
+                <div class="controls-left">
+                    <!-- Play/Pause -->
+                    <div class="player-controls">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <!-- Volume -->
+                    <div class="volume">
+                        <div class="volume-icon">
+                            <i class="fas fa-volume-off"></i>
+                        </div>
+                        <div class="volume-range">
+                            <div class="volume-bar"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Right Controls -->
+                <div class="controls-right">
+                    <!-- Speed -->
+                    <div class="speed">
+                        <select name="playbackRate" class="playerSpeed">
+                            <option value="0.5">0.5</option>
+                            <option value="0.75">0.75</option>
+                            <option value="1" selected>Normal</option>
+                            <option value="1.5">1.5</option>
+                            <option value="2">2</option>
+                        </select>
+                    </div>
+                    <!-- Time -->
+                    <div class="time">
+                        <span class="time-elapsed">00:00 / </span>
+                        <span class="time-duration">02:49</span>
+                    </div>
+                    <!-- Fullscreen -->
+                    <div class="fullscreen">
+                        <i class="fas fa-expand"></i>
+                    </div>
+                </div>
+            </div>
+        <!-- Controls Container -->
+        </div>
+    </div>
+
+
+    <!-- <i class="fas fa-expand"></i>
+    
+    <i class="fas fa-pause"></i>
+    
+    <i class="fas fa-volume-down"></i>
+    <i class="fas fa-volume-up"></i> -->
+
+
+    <!-- Script -->
+    <script src="script.js"></script>
+</body>
+</html>
