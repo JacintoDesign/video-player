@@ -204,10 +204,12 @@ select > option {
     cursor: pointer;
 }
 
+/* Media Query: Large Smartphone (Vertical) */
 @media screen and (max-width: 600px) {
-    .player { min-width: 0; max-width: 95vw; }           
+    .player { min-width: 0; max-width: 95vw; }    
+    .video-fullscreen { position: relative; top: 50%; transform: translateY(-50%); }       
     .fas { font-size: 20px; }
-    .controls-container { height: 50px; opacity: 1; }
+    .controls-container { height: 50px; }
     .control-group { position: relative; top: -20px;}
     .progress-range { width: 100%; top: 0; left: 0; border-radius: 0; }
     .progress-bar { border-radius: 0; }
@@ -215,4 +217,11 @@ select > option {
     .speed, .time { top: 3px; }
     select { font-size: 12px; }
     .time { font-size: 12px; }
+}
+
+/* Media Query: Large Smartphone (Horizontal) */
+@media screen and (max-width: 900px) and (max-height: 500px) {
+    .player { max-height: 95vh; max-width: auto; }
+    video { height: 95vh; object-fit: cover; }
+    .video-fullscreen { height: 97.5vh; }   
 }
