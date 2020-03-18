@@ -11,9 +11,6 @@ const currentTime = player.querySelector('.time-elapsed');
 const duration = player.querySelector('.time-duration');
 const fullscreen = player.querySelector('.fullscreen');
 
-// Global Variables
-
-
 // Play & Pause ----------------------------------- //
 
 playBtn.addEventListener('click', togglePlay);
@@ -95,6 +92,10 @@ function changeVolume(e) {
     console.log(volume);
 }
 
+// Change Playback Speed -------------------- //
 
+speed.addEventListener('change', changeSpeed)
+function changeSpeed() {
+    video[this.name] = this.value;
+}
 
-// 
