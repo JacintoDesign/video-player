@@ -58,7 +58,8 @@ video {
 .progress-range {
     height: 8px;
     width: calc(100% - 30px);
-    background: rgba(0, 0, 0, .5);
+    /* needs to be grey in case video is black */
+    background: rgba(70, 70, 70, 0.5);
     margin: auto;
     border-radius: 10px;
     position: absolute;
@@ -113,7 +114,7 @@ video {
 .volume-range {
     height: 8px;
     width: 100px;
-    background: rgba(0, 0, 0, .5);
+    background: rgba(70, 70, 70, 0.5);
     border-radius: 10px;
     position: relative;
     top: -21px;
