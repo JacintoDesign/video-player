@@ -10,6 +10,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: Helvetica, sans-serif;
 }
 
 .fas {
@@ -81,7 +82,7 @@ video {
     top: 40px;
 }
 
-/* Left Controls */
+/* Left Controls -------------------------- */
 .controls-left {
     justify-content: flex-start;
     margin-left: 15px;
@@ -119,7 +120,7 @@ video {
     background: var(--primary-color);
 }
 
-/* Right Controls */
+/* Right Controls ---------------------------- */
 .controls-right {
     justify-content: flex-end;
     margin-right: 15px;
@@ -130,6 +131,7 @@ video {
     top: 10px;
 }
 
+/* Playback Speed */
 .speed {
     margin-right: 15px;
 }
@@ -138,15 +140,37 @@ select, option {
     cursor: pointer;
 }
 
+select {
+    appearance: none;
+    background-color: transparent;
+    color: var(--font-color);
+    border: none;
+    font-size: 18px;
+    position: relative;
+    top: -2.5px;
+    border-radius: 5px;
+}
+
+select:focus {
+    outline: none;
+}
+
+select > option {
+    background-color: rgba(0, 0, 0, .9);
+    border: none;
+    font-size: 14px;
+}
+
+/* Elapsed Time / Duration */
 .time {
     margin-right: 15px; 
     color: var(--font-color);
     font-weight: bold;
-    font-family: Helvetica, sans-serif;
     /* removes cursor over text */
     user-select: none;
 }
 
+/* Fullscreen */
 .fullscreen {
     cursor: pointer;
 }
