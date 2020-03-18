@@ -10,7 +10,7 @@
 <body>
     <div class="player">
         <!-- https://pixabay.com/videos/download/video-31420_large.mp4?attachment -->
-        <video id='video' src='https://pixabay.com/videos/download/video-31377_tiny.mp4?attachment' autoplay loop muted playsinline></video>
+        <video class='video' src='https://pixabay.com/videos/download/video-31377_tiny.mp4?attachment' autoplay loop muted playsinline></video>
         <div class="controls-container">
             <!-- Progress Bar -->
             <div class="progress-range" title="Seek">
@@ -25,7 +25,7 @@
                     </div>
                     <!-- Volume -->
                     <div class="volume">
-                        <div id="volume-icon">
+                        <div class="volume-icon">
                             <i class="fas fa-volume-up"></i>
                         </div>
                         <div class="volume-range">
@@ -37,7 +37,7 @@
                 <div class="controls-right">
                     <!-- Speed -->
                     <div class="speed" title="Playback Rate">
-                        <select name="playbackRate" id="player-speed">
+                        <select name="playbackRate" class="player-speed">
                             <option value="0.5">0.5 x</option>
                             <option value="0.75">0.75 x</option>
                             <option value="1" selected>1.0 x</option>
