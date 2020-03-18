@@ -19,15 +19,20 @@ body {
 }
 
 .player {
+    max-width: 80vw;
     min-width: 800px;
     border: 5px solid black;
     border-radius: 10px;
     background-color: dodgerblue;
     position: relative;
+    cursor: pointer;
 }
 
 video {
     border-radius: 5px;
+    /* Needed if video is bigger than screen size */
+    width: 100%;
+	height: auto;
 }
 
 .controls-container {
@@ -41,7 +46,8 @@ video {
     display: flex;
     justify-content: space-between;
     opacity: 0;
-    transition: all 0.5s ease-out;
+    /* delay of 2 seconds before disappearing */
+    transition: all 0.5s ease-out 2s;
 }
 
 .player:hover .controls-container {
@@ -71,7 +77,7 @@ video {
     width: 50%;
     height: 100%;
     border-radius: 10px;
-    transition: all 0.1s;
+    transition: all 0.5s ease;
 }
 
 .control-group {
