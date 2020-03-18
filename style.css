@@ -66,7 +66,7 @@ video {
     transition: all 0.1s;
 }
 
-.main-controls {
+.control-group {
     width: 100%;
 	height: 100%;
 	display: flex;
@@ -81,15 +81,45 @@ video {
     top: 40px;
 }
 
+/* Left Controls */
 .controls-left {
     justify-content: flex-start;
     margin-left: 15px;
 }
 
-.player-controls {
+.play-controls {
     margin-right: 15px;
 }
 
+.fa-play:hover, .fa-pause:hover {
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+.volume-range {
+    height: 8px;
+    width: 100px;
+    background: rgba(0, 0, 0, .5);
+    border-radius: 10px;
+    position: relative;
+    top: -21px;
+    left: 50px;
+    cursor: pointer;
+}
+
+.volume-bar {
+    background: var(--font-color);
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    transition: width 0.2s ease-in;
+}
+
+.volume-bar:hover {
+    background: var(--primary-color);
+}
+
+/* Right Controls */
 .controls-right {
     justify-content: flex-end;
     margin-right: 15px;
@@ -104,10 +134,20 @@ video {
     margin-right: 15px;
 }
 
+select, option {
+    cursor: pointer;
+}
+
 .time {
     margin-right: 15px; 
     color: var(--font-color);
     font-weight: bold;
     font-family: Helvetica, sans-serif;
+    /* removes cursor over text */
+    user-select: none;
+}
+
+.fullscreen {
+    cursor: pointer;
 }
 

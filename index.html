@@ -16,17 +16,17 @@
             <div class="progress-range" title="Seek">
                 <div class="progress-bar"></div>
             </div>
-            <div class="main-controls">
+            <div class="control-group">
                 <!-- Left Controls -->
                 <div class="controls-left">
                     <!-- Play/Pause -->
-                    <div class="player-controls">
+                    <div class="play-controls">
                         <i class="fas fa-play"></i>
                     </div>
                     <!-- Volume -->
                     <div class="volume">
-                        <div class="volume-icon">
-                            <i class="fas fa-volume-off"></i>
+                        <div id="volume-icon">
+                            <i class="fas fa-volume-up"></i>
                         </div>
                         <div class="volume-range">
                             <div class="volume-bar"></div>
@@ -37,7 +37,7 @@
                 <div class="controls-right">
                     <!-- Speed -->
                     <div class="speed">
-                        <select name="playbackRate" class="playerSpeed">
+                        <select name="playbackRate" id="player-speed">
                             <option value="0.5">0.5</option>
                             <option value="0.75">0.75</option>
                             <option value="1" selected>Normal</option>
