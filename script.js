@@ -3,7 +3,6 @@ const video = player.querySelector('.video');
 const progressRange = player.querySelector('.progress-range');
 const progressBar = player.querySelector('.progress-bar');
 const playBtn = player.querySelector('.play-controls');
-const playBtnAlt = player.querySelector('.show-controls');
 const volumeIcon = player.querySelector('.volume-icon');
 const volumeRange = player.querySelector('.volume-range');
 const volumeBar = player.querySelector('.volume-bar');
@@ -15,7 +14,6 @@ const fullscreenBtn = player.querySelector('.fullscreen');
 // Play & Pause ----------------------------------- //
 
 playBtn.addEventListener('click', togglePlay);
-playBtnAlt.addEventListener('click', togglePlay);
 video.addEventListener('click', togglePlay);
 function togglePlay() {
     if (video.paused) {
