@@ -11,5 +11,30 @@ const currentTime = player.querySelector('.time-elapsed');
 const duration = player.querySelector('.time-duration');
 const fullscreen = player.querySelector('.fullscreen');
 
+// Global Variables
 
-// playBtn.innerHTML = '<i class="fas fa-pause"></i>'
+
+// Play / Pause Functionality
+playBtn.addEventListener('click', togglePlay);
+video.addEventListener('click', togglePlay);
+function togglePlay() {
+    if (video.paused) {
+        video.play();
+        playBtn.innerHTML = '<i class="fas fa-pause" title="Pause"></i>'
+    } else {
+        video.pause();
+        playBtn.innerHTML = '<i class="fas fa-play" title="Play"></i>'
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+// 
