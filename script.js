@@ -3,17 +3,19 @@ const video = player.querySelector('.video');
 const progressRange = player.querySelector('.progress-range');
 const progressBar = player.querySelector('.progress-bar');
 const playBtn = player.querySelector('.play-controls');
+const playBtnAlt = player.querySelector('.show-controls');
 const volumeIcon = player.querySelector('.volume-icon');
 const volumeRange = player.querySelector('.volume-range');
 const volumeBar = player.querySelector('.volume-bar');
 const speed = player.querySelector('.player-speed');
 const currentTime = player.querySelector('.time-elapsed');
 const duration = player.querySelector('.time-duration');
-const fullscreen = player.querySelector('.fullscreen');
+const fullscreenBtn = player.querySelector('.fullscreen');
 
 // Play & Pause ----------------------------------- //
 
 playBtn.addEventListener('click', togglePlay);
+playBtnAlt.addEventListener('click', togglePlay);
 video.addEventListener('click', togglePlay);
 function togglePlay() {
     if (video.paused) {
@@ -77,10 +79,12 @@ function toggleMute() {
 volumeRange.addEventListener('click', changeVolume);
 function changeVolume(e) {
     let volume = e.offsetX / volumeRange.offsetWidth;
+    // rounding volume up or down
     if (volume < 0.1) { volume = 0; }
     if (volume > 0.9) { volume = 1; }
     volumeBar.style.width = `${volume * 100}%`
     video.volume = volume;
+    // change icon depending on volume
     if (volume > 0.7) {
         volumeIcon.innerHTML = '<i class="fas fa-volume-up"></i>';
     } else if (volume < 0.7 && volume > 0) {
@@ -89,7 +93,6 @@ function changeVolume(e) {
         volumeIcon.innerHTML = '<i class="fas fa-volume-off"></i>';
     }
     lastVolume = volume;
-    console.log(volume);
 }
 
 // Change Playback Speed -------------------- //
@@ -99,3 +102,42 @@ function changeSpeed() {
     video[this.name] = this.value;
 }
 
+// Fullscreen ------------------------------- //
+fullscreenBtn.addEventListener('click', toggleFullscreen);
+
+let fullscreen = false;
+// Toggle fullscreen
+function toggleFullscreen() {   
+    if (fullscreen == false) {
+        openFullscreen(player);
+    } else {
+        closeFullscreen()
+    }
+    fullscreen = !fullscreen;
+}
+
+/* View in fullscreen */
+function openFullscreen(element) {
+    if (element.requestFullscreen) {
+      element.requestFullscreen();
+    } else if (element.mozRequestFullScreen) { /* Firefox */
+      element.mozRequestFullScreen();
+    } else if (element.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+      element.webkitRequestFullscreen();
+    } else if (element.msRequestFullscreen) { /* IE/Edge */
+      element.msRequestFullscreen();
+    }
+}
+  
+/* Close fullscreen */
+function closeFullscreen() {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if (document.mozCancelFullScreen) { /* Firefox */
+      document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) { /* Chrome, Safari and Opera */
+      document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) { /* IE/Edge */
+      document.msExitFullscreen();
+    }
+}
