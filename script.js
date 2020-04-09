@@ -67,11 +67,11 @@ function toggleMute() {
   if (video.volume) {
     lastVolume = video.volume;
     video.volume = 0;
-    volumeIcon.innerHTML = '<i class="fas fa-volume-mute" title="Unmute"></i>';
+    volumeIcon.innerHTML = `<i class="fas fa-volume-mute" title="Unmute"></i>`;
     volumeBar.style.width = 0;
   } else {
     video.volume = lastVolume;
-    volumeIcon.innerHTML = '<i class="fas fa-volume-up" title="Mute"></i>';
+    volumeIcon.innerHTML = `<i class="fas fa-volume-up" title="Mute"></i>`;
     volumeBar.style.width = `${lastVolume * 100}%`;
   }
 }
@@ -91,11 +91,11 @@ function changeVolume(e) {
   video.volume = volume;
   // Change icon depending on volume
   if (volume > 0.7) {
-    volumeIcon.innerHTML = '<i class="fas fa-volume-up"></i>';
+    volumeIcon.innerHTML = `<i class="fas fa-volume-up"></i>`;
   } else if (volume < 0.7 && volume > 0) {
-    volumeIcon.innerHTML = '<i class="fas fa-volume-down"></i>';
+    volumeIcon.innerHTML = `<i class="fas fa-volume-down"></i>`;
   } else if (volume == 0) {
-    volumeIcon.innerHTML = '<i class="fas fa-volume-off"></i>';
+    volumeIcon.innerHTML = `<i class="fas fa-volume-off"></i>`;
   }
   lastVolume = volume;
 }
