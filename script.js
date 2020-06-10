@@ -154,7 +154,6 @@ function toggleFullscreen() {
   fullscreen = !fullscreen;
 }
 
-
 // Event Listeners
 playBtn.addEventListener('click', togglePlay);
 video.addEventListener('click', togglePlay);
