@@ -103,7 +103,7 @@ function changeVolume(e) {
 // Change Playback Speed -------------------- //
 
 function changeSpeed() {
-  video[this.name] = this.value;
+  video.playbackRate = speed.value;
 }
 
 // Fullscreen ------------------------------- //
