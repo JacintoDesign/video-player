@@ -28,6 +28,7 @@ function togglePlay() {
     showPlayIcon();
   }
 }
+
 // On video end, show play button icon
 video.addEventListener('ended', showPlayIcon);
 
@@ -35,7 +36,7 @@ video.addEventListener('ended', showPlayIcon);
 
 // Format current time, duration
 function displayTime(time) {
-  const minutes = Math.floor((time % 3600) / 60);
+  const minutes = Math.floor(time / 60);
   let seconds = Math.floor(time % 60);
   seconds = seconds > 9 ? seconds : `0${seconds}`;
   return `${minutes}:${seconds}`;
@@ -108,8 +109,6 @@ function changeSpeed() {
 
 // Fullscreen ------------------------------- //
 
-let fullscreen = false;
-
 /* View in fullscreen */
 function openFullscreen(element) {
   if (element.requestFullscreen) {
@@ -144,9 +143,11 @@ function closeFullscreen() {
   video.classList.remove('video-fullscreen');
 }
 
+let fullscreen = false;
+
 // Toggle fullscreen
 function toggleFullscreen() {
-  if (fullscreen === false) {
+  if (!fullscreen) {
     openFullscreen(player);
   } else {
     closeFullscreen();
@@ -157,10 +158,10 @@ function toggleFullscreen() {
 // Event Listeners
 playBtn.addEventListener('click', togglePlay);
 video.addEventListener('click', togglePlay);
-progressRange.addEventListener('click', setProgress);
 video.addEventListener('timeupdate', updateProgress);
 video.addEventListener('canplay', updateProgress);
-volumeIcon.addEventListener('click', toggleMute);
+progressRange.addEventListener('click', setProgress);
 volumeRange.addEventListener('click', changeVolume);
+volumeIcon.addEventListener('click', toggleMute);
 speed.addEventListener('change', changeSpeed);
 fullscreenBtn.addEventListener('click', toggleFullscreen);
